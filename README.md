@@ -183,7 +183,8 @@ The following are the intellectual property of Dravknox Studios and are **not** 
 - Division names: **Talvrek**, **Embrvaal**, **Veltrun**, **The Vault**
 - The **Payne-less UI** name and branding
 - All logos and artwork under `assets/`
-- The name **SIGIL** as used for the studio chatbot
+- All information under `data/`
+- The name **S.I.G.I.L.** as used for the studio chatbot
 - All original written content, lore, and world-building material
 
 These may not be reproduced, reused, or adapted without explicit written permission.
