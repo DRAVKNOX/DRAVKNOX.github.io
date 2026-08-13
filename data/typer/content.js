@@ -102,7 +102,7 @@ const TYPER_CONTENT = {
     { file: "Setup.png", label: "Setup Wizard" },
     { file: "Typing.png", label: "Typing & Predictions" },
     { file: "Numbers.png", label: "Numbers & Symbols" },
-    { file: "Customize.jpg", label: "Customization" },
+    { file: "Customize.png", label: "Customization" },
     { file: "Emoji.png", label: "Emoji Panel" },
     { file: "Clipboard.png", label: "Clipboard Manager" }
   ],

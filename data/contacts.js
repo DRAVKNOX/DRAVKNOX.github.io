@@ -36,7 +36,7 @@ window.DK_CONTACTS = [
   {
     platform: "bluesky",
     username: "DRAVKNOX",
-    href:     "https://bsky.app/profile/dravknox.bsky.social"
+    href:     "https://bsky.app/profile/dravknox-studios.github.io"
   }
 /*  {
     platform: "spotify",

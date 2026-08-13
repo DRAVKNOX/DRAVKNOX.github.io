@@ -97,6 +97,7 @@
 <link rel="stylesheet" href="css/typer/gallery-downloads.css">
 <link rel="stylesheet" href="css/lightbox/lightbox-base.css">
 <link rel="stylesheet" href="css/lightbox/lightbox-ui.css">
+<link rel="stylesheet" href="css/typer/a11y.css">
 
 <style>
 /* ── Privacy Policy section ── */
@@ -206,7 +207,7 @@
       </div>
     </div>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
-    <nav class="main-nav" id="mainNav">
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
       <ul>
         <li><a href="#features">Features</a></li>
         <li><a href="#performance">Performance</a></li>
@@ -219,7 +220,7 @@
   </div>
 </header>
 
-<section class="hero">
+<section class="hero" aria-label="Typer hero section — featured keyboard description and actions">
   <div class="hero-kicker">Pure Java · Zero XML · 4MB total</div>
   <h2>A keyboard that <span>just works,</span><br>without making your phone sweat</h2>
   <p class="hero-desc">Built from scratch with custom canvas rendering instead of heavy layouts. Predictions, auto-correct, themes, clipboard memory, all running entirely on your device. No internet permission, no exceptions.</p>
@@ -242,14 +243,14 @@
   </div>
 </div>
 
-<section class="section" id="features">
+<section class="section" id="features" aria-label="Typer — features" class="a11y-typer-section">
   <div class="eyebrow">The good stuff</div>
   <h2 class="section-heading">Everything you actually need for daily typing</h2>
   <p class="section-sub">No AI assistant pretending to be a keyboard. Just the features that earn their keep, every single day.</p>
   <div class="feature-grid" id="featureGrid"></div>
 </section>
 
-<section class="section" id="performance">
+<section class="section" id="performance" aria-label="Typer — performance" class="a11y-typer-section">
   <div class="eyebrow">How it performs</div>
   <h2 class="section-heading">Measured, not promised</h2>
   <p class="section-sub">Pulled straight from ADB profiling. This app doesn't treat your RAM like an all-you-can-eat buffet.</p>
@@ -258,7 +259,7 @@
   <ul class="hood-list" id="hoodList"></ul>
 </section>
 
-<section class="section" id="requirements">
+<section class="section" id="requirements" aria-label="Typer — requirements" class="a11y-typer-section">
   <div class="eyebrow">Requirements</div>
   <h2 class="section-heading">Floor and ceiling</h2>
   <p class="section-sub">Built on a de-Googled Android 8.1 device. It should feel right at home on GrapheneOS, LineageOS, AOSP, and most custom ROMs.</p>
@@ -274,7 +275,7 @@
   </div>
 </section>
 
-<section class="section" id="audience">
+<section class="section" id="audience" aria-label="Typer — audience" class="a11y-typer-section">
   <div class="eyebrow">Is this for you</div>
   <h2 class="section-heading">Know before you install</h2>
   <div class="audience-grid">
@@ -289,21 +290,21 @@
   </div>
 </section>
 
-<section class="section" id="screenshots">
+<section class="section" id="screenshots" aria-label="Typer — screenshots" class="a11y-typer-section">
   <div class="eyebrow">Feast your eyes</div>
   <h2 class="section-heading">Shot on Android 8.1</h2>
   <p class="section-sub">Fonts and rendering vary a little by Android version and hardware, so don't be alarmed if yours looks slightly different.</p>
   <div class="gallery-grid" id="galleryGrid" data-lightbox-group></div>
 </section>
 
-<section class="section" id="downloads">
+<section class="section" id="downloads" aria-label="Typer — downloads" class="a11y-typer-section">
   <div class="eyebrow">Get it</div>
   <h2 class="section-heading">Downloads</h2>
   <p class="section-sub">Pick your poison. All three roads lead to the same keyboard.</p>
   <div class="link-grid" id="downloadGrid"></div>
 </section>
 
-<section class="section" id="code">
+<section class="section" id="code" aria-label="Typer — code" class="a11y-typer-section">
   <div class="eyebrow">For the developers</div>
   <h2 class="section-heading">Poke the internals</h2>
   <p class="section-sub">Mmap dictionary, zero layout inflation, a bigram model that actually learns. Everything's open if you want to see how it ticks.</p>

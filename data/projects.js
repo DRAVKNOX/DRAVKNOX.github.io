@@ -28,6 +28,20 @@ window.DK_PROJECTS = [
     ],
     platforms: ["Android"]
   },
+  {
+    division: "talvrek",
+    id:       "watcher",
+    name:     "Payne-less: Watcher",
+    tagline:  "The clock you never knew you needed",
+    icon:     "assets/watcher/watcherlogo.png",
+    href:     "watcher.html",
+    status:   "Released",
+    languages: [
+      { name: "Kotlin",       pct: 99.6 },
+      { name: "Python", pct: 0.4 }
+    ],
+    platforms: ["Android"]
+  },
 
   /* ── Embrvaal — Games ────────────────────────────────────── */
   {

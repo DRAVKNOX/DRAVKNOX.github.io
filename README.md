@@ -13,7 +13,7 @@ The current iteration is codenamed **Payne-less UI: Great Granddaddy**. It is a 
 - **Left sidebar** - Studio stats panel, revealed on hover (`Stats`)
 - **Center** - Hero wordmark + four division cards (Talvrek, Embrvaal, Veltrun, The Vault)
 - **Right sidebar** - Studio info card, revealed on hover (`Info`)
-- **Bottom controls dock** - Theme toggle, Motion toggle, SIGIL chatbot, Contact drop-up
+- **Bottom controls dock** - Theme toggle, Motion toggle, S.I.G.I.L. chatbot, Contact drop-up
 
 A procedural animated canvas (`<canvas id="bg-canvas">`) renders behind all content as the ambient background. Theme defaults to dark; a light mode toggle is available in the bottom dock.
 
