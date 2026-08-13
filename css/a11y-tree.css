@@ -1,0 +1,10 @@
+/* a11y-tree.css — Accessibility tree entry point */
+@import url("./a11y/layout.css");
+@import url("./a11y/hero.css");
+@import url("./a11y/divisions.css");
+@import url("./a11y/division-details.css");
+@import url("./a11y/controls.css");
+@import url("./a11y/motion.css");
+@import url("./a11y/responsive.css");
+@import url("./a11y/regions.css");
+@import url("./a11y/states.css");

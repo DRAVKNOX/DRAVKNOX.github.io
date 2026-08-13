@@ -1,0 +1,45 @@
+/* ────────────────────────────────────────────────────────────
+   1. SEMANTIC LANDMARKS & REGIONALIZATION
+   Makes the 3-column grid more discoverable for assistive tech
+   ─────────────────────────────────────────────────────────── */
+
+#page {
+  display: grid;
+  grid-template-columns: 88px 1fr 88px;
+  grid-template-rows: 1fr auto;
+  grid-template-areas:
+    "left  center  right"
+    "left  bottom  right";
+  height: 100dvh;
+  width: 100vw;
+}
+
+/* Left sidebar: Stats & navigation */
+#sidebar-left,
+#sidebar-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  padding: var(--space-md);
+}
+
+/* Center: Main content with hero & divisions */
+#center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(var(--space-lg), 3vh, var(--space-xl));
+  padding: var(--space-lg) var(--space-md);
+  min-height: 0;
+}
+
+/* Bottom: Controls dock */
+#bottom {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 0 var(--space-md) var(--space-md);
+  pointer-events: none;
+}

@@ -1,0 +1,267 @@
+/* ============================================================
+   typer/a11y.css — Accessibility tree enhancements for Payne-less: Typer
+   Tailored from the index.html a11y-tree.css logic, adapted for
+   the typer page's structure and design tokens.
+   ============================================================ */
+
+/* ────────────────────────────────────────────────────────────
+   1. FOCUS VISIBLE & KEYBOARD NAVIGATION
+   Improves readability of focus paths for sighted users
+   Only highlights actual interactive elements, not container divs
+   ─────────────────────────────────────────────────────────── */
+
+/* Focus visible on interactive elements */
+nav a:focus-visible,
+nav button:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--accent, #ff5c5c);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm, 10px);
+}
+
+/* Focus-visible on the navigation toggle */
+#navToggle:focus-visible {
+  outline: 2px solid var(--accent, #ff5c5c);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm, 10px);
+}
+
+/* Focus within for actual card containers (not section wrappers) */
+.feature-card:focus-within,
+.stats-card:focus-within,
+.hood-item:focus-within,
+.code-item:focus-within,
+.download-card:focus-within,
+.audience-card:focus-within {
+  outline: 2px solid var(--accent, #ff5c5c);
+  outline-offset: 3px;
+}
+
+/* ────────────────────────────────────────────────────────────
+   2. ARIA STATE CONSISTENCY
+   Ensures predictable tree formation across interactive states
+   ─────────────────────────────────────────────────────────── */
+
+[aria-pressed="true"] {
+  background: rgba(255, 92, 92, 0.14);
+  color: var(--accent, #ff5c5c);
+}
+
+[aria-pressed="true"] span {
+  color: var(--accent, #ff5c5c);
+}
+
+[aria-expanded="true"] {
+  background: rgba(255, 92, 92, 0.10);
+}
+
+[aria-selected="true"] {
+  font-weight: var(--weight-semibold, 600);
+  color: var(--text-primary, #f2f2f0);
+}
+
+[aria-selected="true"] span,
+[aria-selected="true"] .division-name {
+  color: var(--text-primary, #f2f2f0);
+}
+
+/* ────────────────────────────────────────────────────────────
+   3. SEMANTIC LANDMARKS & REGIONS
+   Makes section structure more discoverable for assistive tech
+   ─────────────────────────────────────────────────────────── */
+
+section[role="region"] {
+  outline: none;
+}
+
+/* Section heading as page landmarks */
+.h2,
+.section-heading {
+  id: auto;
+}
+
+/* Hero region with structured label */
+.hero {
+  aria-label="Typer hero section — featured keyboard description and actions";
+}
+
+/* Main content regions */
+.features,
+.performance,
+.requirements,
+.audience,
+.screenshots,
+.downloads,
+.code,
+.privacy-section {
+  aria-label="Typer — section content";
+}
+
+/* ────────────────────────────────────────────────────────────
+   4. FOCUS VISIBLE OVERLAY HINTS
+   Sighted focus indicators matching the a11y-grid pattern
+   ─────────────────────────────────────────────────────────── */
+
+.a11y-typer-hero {
+  position: relative;
+  padding: var(--space-sm, 8px);
+}
+
+.a11y-typer-hero::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border: 1px solid var(--border-subtle, rgba(255, 92, 92, 0.15));
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  border-radius: var(--radius-md, 16px);
+}
+
+.a11y-typer-hero:hover::before,
+.a11y-typer-hero:focus-within::before {
+  opacity: 0.15;
+}
+
+.a11y-typer-section {
+  position: relative;
+  padding: var(--space-sm, 8px);
+}
+
+.a11y-typer-section::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 1px solid var(--border-subtle, rgba(255, 92, 92, 0.15));
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  border-radius: var(--radius-xl, 24px);
+}
+
+.a11y-typer-section:hover::before,
+.a11y-typer-section:focus-within::before {
+  opacity: 0.2;
+}
+
+/* ────────────────────────────────────────────────────────────
+   5. PRIVACY POLICY STRUCTURE
+   Ensures list/tree readability for screen readers
+   ─────────────────────────────────────────────────────────── */
+
+.privacy-card[role="list"] {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+}
+
+.privacy-card[role="list"] .privacy-item {
+  role: listitem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--text, #e8e8e4);
+}
+
+.privacy-card[role="list"] .privacy-item + .privacy-item {
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.privacy-item-icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  margin-top: 2px;
+  color: var(--accent, #ff5c5c);
+}
+
+/* ────────────────────────────────────────────────────────────
+   6. LIGHTBOX DIALOG ACCESSIBILITY
+   Ensures modal tree is clearly defined
+   ─────────────────────────────────────────────────────────── */
+
+#lightbox[role="dialog"][aria-modal="true"] {
+  outline: none;
+}
+
+#lightbox[role="dialog"][aria-modal="true"]:focus-visible {
+  outline: 2px solid var(--accent, #ff5c5c);
+  outline-offset: 3px;
+  border-radius: var(--radius-md, 16px);
+}
+
+#lightbox .lightbox-close:focus-visible {
+  outline: 2px solid var(--accent, #ff5c5c);
+  outline-offset: 3px;
+}
+
+/* ────────────────────────────────────────────────────────────
+   7. NAVIGATION & CONTROLS
+   ─────────────────────────────────────────────────────────── */
+
+nav#mainNav ul {
+  aria-label="Main navigation";
+}
+
+nav#mainNav ul li a {
+  outline: none;
+  text-decoration: none;
+}
+
+nav#mainNav ul li a:focus-visible {
+  outline: 2px solid var(--accent, #ff5c5c);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm, 10px);
+}
+
+/* Navigation toggle button */
+#navToggle {
+  aria-label="Toggle navigation";
+}
+
+/* Feature action buttons */
+.feature-grid a,
+.download-grid a,
+.code-grid a {
+  outline: none;
+}
+
+.feature-grid a:focus-visible,
+.download-grid a:focus-visible,
+.code-grid a:focus-visible {
+  outline: 2px solid var(--accent, #ff5c5c);
+  outline-offset: 3px;
+}
+
+/* ────────────────────────────────────────────────────────────
+   8. RESPONSIVE ACCESSIBILITY
+   Simplify focus paths for narrower viewports
+   ─────────────────────────────────────────────────────────── */
+
+@media (max-width: 640px) {
+  .a11y-typer-hero,
+  .a11y-typer-section {
+    padding: calc(var(--space-sm, 8px) * 0.75);
+  }
+
+  .a11y-typer-hero::before,
+  .a11y-typer-section::before {
+    border-width: 2px;
+  }
+
+  .a11y-typer-hero:hover::before,
+  .a11y-typer-hero:focus-within::before,
+  .a11y-typer-section:hover::before,
+  .a11y-typer-section:focus-within::before {
+    opacity: 0.25;
+  }
+}

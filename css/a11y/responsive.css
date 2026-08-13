@@ -1,0 +1,120 @@
+/* ────────────────────────────────────────────────────────────
+   7. RESPONSIVE ACCESSIBILITY
+   Simplify grid for smaller viewports
+   ─────────────────────────────────────────────────────────── */
+
+@media (max-width: 700px) {
+  html,
+  body {
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  #page {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "left"
+      "center"
+      "bottom";
+    min-height: 100dvh;
+    height: auto;
+    overflow-x: clip;
+  }
+
+  #sidebar-left,
+  #sidebar-right {
+    grid-area: left;
+    display: flex;
+    align-items: center;
+    padding: var(--space-md);
+    z-index: 20;
+  }
+
+  #sidebar-left {
+    justify-self: start;
+    justify-content: flex-start;
+    padding-right: 0;
+  }
+
+  #sidebar-right {
+    justify-self: end;
+    justify-content: flex-end;
+    padding-left: 0;
+  }
+
+  #sidebar-left.is-panel-open,
+  #sidebar-left:focus-within,
+  #sidebar-right.is-panel-open,
+  #sidebar-right:focus-within {
+    z-index: 1000;
+  }
+
+  #center {
+    justify-content: flex-start;
+    padding: var(--space-sm) var(--space-md) var(--space-lg);
+  }
+
+  #bottom {
+    justify-content: center;
+    align-items: center;
+    padding: 0 var(--space-md) max(var(--space-md), env(safe-area-inset-bottom));
+    position: sticky;
+    bottom: 0;
+    z-index: 30;
+  }
+
+  #divisions {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: min(420px, 92vw);
+  }
+
+  /* Hero adjustments */
+  #hero {
+    gap: 6px;
+    width: 100%;
+  }
+
+  .hero-name {
+    max-width: 100%;
+    font-size: clamp(2.35rem, 15vw, 4.25rem);
+    overflow-wrap: anywhere;
+  }
+
+  .hero-suffix {
+    font-size: clamp(0.62rem, 3vw, 0.85rem);
+    letter-spacing: clamp(0.28em, 5vw, 0.5em);
+    margin-left: clamp(0.28em, 5vw, 0.5em);
+  }
+
+  .hero-rule {
+    width: min(220px, 70vw);
+  }
+
+  .hero-tagline,
+  .hero-sub {
+    max-width: 100%;
+  }
+}
+
+/* Short height viewports */
+@media (max-height: 500px) and (min-width: 701px) {
+  #center {
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .hero-rule {
+    display: none;
+  }
+
+  .hero-sub {
+    display: none;
+  }
+
+  #divisions {
+    max-width: min(680px, 88vw);
+  }
+}

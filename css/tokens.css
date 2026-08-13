@@ -91,12 +91,20 @@
   --z-content:  10;
   --z-sidebar:  20;
   --z-controls: 30;
+  
+  /* --- Accessibility tree depth --- */
+  --z-a11y-base:  10;
+  --z-a11y-overlay: 15;
+  --z-a11y-focus:  20;
 }
 
 /* ============================================================
    Light theme
    ============================================================ */
-[data-theme="light"] {
+ [data-theme="light"] {
+    --z-a11y-base:  10;
+    --z-a11y-overlay: 15;
+    --z-a11y-focus:  20;
   --bg-base:       #EDEEF5;
   --bg-surface:    #E4E5F0;
   --bg-card:       #D8DAE8;

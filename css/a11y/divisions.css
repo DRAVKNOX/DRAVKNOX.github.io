@@ -1,0 +1,106 @@
+/* ────────────────────────────────────────────────────────────
+   3. DIVISION GRID — CARD SYSTEM
+   Four navigation cards for main content access
+   ─────────────────────────────────────────────────────────── */
+
+#divisions {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  max-width: min(760px, 90vw);
+  gap: 1px;
+  background: var(--border-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* Division cards — either <a> or <button> */
+button.division-card,
+a.division-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-lg) var(--space-md);
+  background: var(--bg-card);
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    background var(--dur-mid) var(--ease-out),
+    box-shadow var(--dur-mid) var(--ease-out);
+  min-height: 0;
+}
+
+/* Radial glow on hover — per-division accent */
+.division-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity var(--dur-mid) var(--ease-out);
+  pointer-events: none;
+}
+
+.division-card[data-division="talvrek"]::before {
+  background: radial-gradient(ellipse at 50% 10%,
+    rgba(122,172,204,0.1) 0%, transparent 65%);
+}
+
+.division-card[data-division="embrvaal"]::before {
+  background: radial-gradient(ellipse at 50% 10%,
+    rgba(204,58,42,0.12) 0%, transparent 65%);
+}
+
+.division-card[data-division="veltrun"]::before {
+  background: radial-gradient(ellipse at 50% 10%,
+    rgba(74,143,204,0.10) 0%, transparent 65%);
+}
+
+.division-card[data-division="vault"]::before {
+  background: radial-gradient(ellipse at 50% 10%,
+    rgba(112,114,133,0.1) 0%, transparent 65%);
+}
+
+.division-card:hover {
+  background: var(--bg-card-hover);
+}
+
+.division-card:hover::before {
+  opacity: 1;
+}
+
+/* Logo image slot */
+.division-logo-slot {
+  width: clamp(52px, 8vw, 72px);
+  height: clamp(52px, 8vw, 72px);
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--dur-mid) var(--ease-out),
+              filter var(--dur-mid) var(--ease-out);
+  background: var(--bg-surface);
+  border: 1px dashed var(--border-card);
+  position: relative;
+}
+
+/* When image is present, remove background */
+.division-logo-slot:has(img) {
+  background: transparent;
+  border: none;
+}
+
+/* Icon slot variant (for Vault) */
+.division-logo-slot.icon-slot {
+  background: transparent;
+  border: none;
+}
+
+.division-card:hover .division-logo-slot {
+  transform: translateY(-3px) scale(1.04);
+}

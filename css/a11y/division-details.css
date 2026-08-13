@@ -1,0 +1,70 @@
+/* Per-division glows on hover */
+.division-card[data-division="talvrek"]:hover .division-logo-slot {
+  filter: drop-shadow(var(--glow-talvrek));
+}
+
+.division-card[data-division="embrvaal"]:hover .division-logo-slot {
+  filter: drop-shadow(var(--glow-embrvaal));
+}
+
+.division-card[data-division="veltrun"]:hover .division-logo-slot {
+  filter: drop-shadow(var(--glow-veltrun));
+}
+
+.division-card[data-division="vault"]:hover .division-logo-slot {
+  filter: drop-shadow(var(--glow-vault));
+}
+
+/* Division text hierarchy */
+.division-name {
+  font-family: var(--font-display);
+  font-size: var(--size-division);
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.06em;
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+
+.division-label {
+  font-size: var(--size-label);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+}
+
+.division-sub {
+  font-size: var(--size-label);
+  font-weight: var(--weight-regular);
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+/* Division accent colors */
+.division-card[data-division="talvrek"] .division-label {
+  color: var(--accent-talvrek);
+}
+
+.division-card[data-division="embrvaal"] .division-label {
+  color: var(--accent-embrvaal);
+}
+
+.division-card[data-division="veltrun"] .division-label {
+  color: var(--accent-veltrun);
+}
+
+.division-card[data-division="vault"] .division-label {
+  color: var(--accent-vault);
+}
+
+/* Vault icon SVG sizing */
+.vault-icon svg {
+  width: clamp(44px, 7vw, 60px);
+  height: clamp(44px, 7vw, 60px);
+  color: var(--accent-vault);
+  transition: color var(--dur-mid);
+}
+
+.division-card[data-division="vault"]:hover .vault-icon svg {
+  color: #9A9CB0;
+}

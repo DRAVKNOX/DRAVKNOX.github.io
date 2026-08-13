@@ -1,0 +1,22 @@
+/*
+ * Unified homepage stylesheet entrypoint.
+ * Keep imports in the same order previously used by index.html
+ * so the cascade remains unchanged.
+ */
+@import url("./tokens.css");
+@import url("./layout.css");
+@import url("./hero.css");
+@import url("./cards.css");
+@import url("./controls.css");
+@import url("./background.css");
+@import url("./theme.css");
+@import url("./modal-base.css");
+@import url("./modal-projects.css");
+@import url("./dropup.css");
+@import url("./chatbot-panel.css");
+@import url("./chatbot-messages.css");
+@import url("./statscard.css");
+@import url("./infocard-layout.css");
+@import url("./infocard-content.css");
+@import url("./project-status.css");
+@import url("./a11y-tree.css");

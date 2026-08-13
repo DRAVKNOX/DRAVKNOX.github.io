@@ -1,0 +1,20 @@
+/* Payne-less: Watch — scrollbar customization */
+
+/* Webkit browsers */
+.section::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.section::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+.section::-webkit-scrollbar-thumb {
+  background: var(--surface-2);
+  border-radius: 4px;
+}
+
+.section::-webkit-scrollbar-thumb:hover {
+  background: var(--text-faint);
+}

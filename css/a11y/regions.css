@@ -1,0 +1,80 @@
+/* ────────────────────────────────────────────────────────────
+   9. VISUAL ACCESSIBILITY OVERLAY
+   Subtle hints to make semantic regions visible to sighted users
+   ─────────────────────────────────────────────────────────── */
+
+/* Main page grid hint */
+.a11y-grid {
+  position: relative;
+}
+
+/* Sidebar hints */
+.a11y-sidebar {
+  position: relative;
+}
+
+.a11y-sidebar::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 1px solid var(--border-subtle);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.a11y-sidebar:hover::before,
+.a11y-sidebar:focus-within::before {
+  opacity: 0.25;
+}
+
+/* Bottom controls hint */
+.a11y-bottom {
+  position: relative;
+}
+
+.a11y-bottom::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 1px solid var(--border-subtle);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  border-radius: var(--radius-xl);
+}
+
+.a11y-bottom:hover::before,
+.a11y-bottom:focus-within::before {
+  opacity: 0.2;
+}
+
+/* Hero region hint */
+.a11y-hero {
+  position: relative;
+  padding: var(--space-sm);
+}
+
+.a11y-hero::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border: 1px solid var(--border-subtle);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.a11y-hero:hover::before,
+.a11y-hero:focus-within::before {
+  opacity: 0.15;
+}

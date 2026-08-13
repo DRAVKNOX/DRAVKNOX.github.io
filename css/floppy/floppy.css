@@ -1,6 +1,35 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:100%;height:100%;overflow:hidden;background:#0a0a14;font-family:'Segoe UI',system-ui,sans-serif}
 
+/* Reduced motion */
+body[data-motion="off"] .bird{
+  animation:none;
+}
+
+/* Focus-visible outline — consistent with a11y-tree.css pattern */
+.wrap :focus-visible{
+  outline:2px solid var(--border-focus);
+  outline-offset:3px;
+  border-radius:var(--radius-sm);
+}
+
+/* Accessibility overlay wrapper */
+.a11y-wrap{
+  position:relative;
+}
+
+/* Region hint on focus */
+.a11y-wrap:focus-visible::before{
+  content:'';
+  position:absolute;
+  inset:-4px;
+  border:1px solid var(--border-subtle);
+  opacity:0.2;
+  pointer-events:none;
+  border-radius:var(--radius-xl);
+  z-index:5;
+}
+
 .sky{position:fixed;inset:0;z-index:0;background:radial-gradient(ellipse at 50% 30%,#171034 0%,#0a0a14 70%)}
 .stars{position:absolute;inset:0;
   background-image:radial-gradient(2px 2px at 20% 30%,#fff8,transparent),

@@ -248,8 +248,8 @@
 }
 
 .lightbox-thumb {
-  width: 50px;
-  height: 38px;
+  width: 140px;
+  height: 100px;
   flex-shrink: 0;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border-subtle);
@@ -283,8 +283,8 @@
   .lightbox-nav.next { right: 6px; }
 
   .lightbox-thumb {
-    width: 42px;
-    height: 32px;
+    width: 80px;
+    height: 60px;
   }
 
   .lightbox-zoom-bar {

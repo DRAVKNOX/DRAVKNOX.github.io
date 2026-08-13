@@ -1,0 +1,48 @@
+/* ────────────────────────────────────────────────────────────
+   10. GLOBAL ACCESSIBILITY UTILITIES
+   ─────────────────────────────────────────────────────────── */
+
+/* Focus visible — 2px outline with offset, applied to cards, buttons and toggles */
+.sidebar-btn:focus-visible,
+.division-card:focus-visible,
+.ctrl-btn:focus-visible,
+.ic-section:focus-visible,
+#stats-trigger:focus-visible,
+#info-trigger:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* Focus within for nested containers */
+.sidebar-btn:focus-within,
+.division-card:focus-within,
+.ctrl-btn:focus-within,
+.ic-section:focus-within,
+#stats-trigger:focus-within,
+#info-trigger:focus-within {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 4px;
+}
+
+/* Selected state for buttons */
+[aria-selected="true"] {
+  font-weight: var(--weight-semibold);
+  color: var(--text-primary);
+}
+
+[aria-selected="true"] span,
+[aria-selected="true"] .division-name {
+  color: var(--text-primary);
+}
+
+/* Pressed state */
+[aria-pressed="true"] {
+  background: rgba(192, 40, 26, 0.12);
+  color: var(--brand-red-bright);
+}
+
+/* Expanded state */
+[aria-expanded="true"] {
+  background: rgba(192, 40, 26, 0.10);
+}

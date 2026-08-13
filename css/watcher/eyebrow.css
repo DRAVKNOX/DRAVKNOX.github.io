@@ -1,0 +1,15 @@
+/* Payne-less: Watch — eyebrow section styles */
+
+.watch-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.watch-section .eyebrow {
+  margin-left: -12px;
+}
